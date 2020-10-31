@@ -1,0 +1,12 @@
+<p>name works!</p>
+<div>
+    Name: <input type="text" [formControl]="name">
+</div>
+<div>
+    Email: <input type="text" [formControl]="email">
+</div>
+<h2>Value: {{name.value}}</h2>
+
+<div>
+    <button (click)="updateName()">Update Name</button>
+</div>
