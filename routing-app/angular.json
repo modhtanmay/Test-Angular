@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-training": {
+    "routing-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-training",
+            "outputPath": "dist/routing-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-training:build"
+            "browserTarget": "routing-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-training:build:production"
+              "browserTarget": "routing-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-training:build"
+            "browserTarget": "routing-app:build"
           }
         },
         "test": {
@@ -110,19 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-training:serve"
+            "devServerTarget": "routing-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-training:serve:production"
+              "devServerTarget": "routing-app:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "angular-training",
-  "cli": {
-    "analytics": "dd2d904c-4570-44b2-94d8-70da59d81d58"
-  }
+    }},
+  "defaultProject": "routing-app"
 }

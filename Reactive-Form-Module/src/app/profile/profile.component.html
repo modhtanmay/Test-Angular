@@ -22,9 +22,38 @@
         <label>
             State: <input type="text" formControlName="state">
         </label>
+    </div>
 
+    <div formGroupName="academics">
+        <h3>Academic Details</h3>
+        <label>
+            Senior Secondary: <input type="text" formControlName="ssc">
+        </label>
+        <label>
+            Higher Secondary: <input type="text" formControlName="hsc">
+        </label>
+        <label>
+            Degree: <input type="text" formControlName="degree">
+        </label>
+    </div>
+
+    <div formArrayName="info">
+        <h3>Add More Information</h3>
+
+        <button (click)="addInfo()">Add Info</button>
+
+        <div *ngFor="let infos of info.controls; let i = index ">
+            <label>
+                Info: <input type="text" [formcontrol]=i>
+            </label>
+        </div>
 
     </div>
 
     <button [disabled]="!profile.valid" type="submit" value="submit">Submit</button>
 </form>
+
+
+<button (click)="updateProfile()">Update Profile</button>
+
+<p>Form Status: </p> {{profile.status}}
